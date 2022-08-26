@@ -8,10 +8,7 @@ export default function Footer() {
               <span className="ml-3 text-xl">Grayash`s Portfolio</span>
             </a>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-              <a
-                href="https://github.com/grayashh"
-                className="ml-3 text-gray-500"
-              >
+              <a href="https://github.com/grayashh" className="text-gray-500">
                 <svg
                   fill="currentColor"
                   stroke-linecap="round"
