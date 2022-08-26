@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Kang`s Portfolio</title>
+        <title>Grayash`s Portfolio</title>
         <meta name="description" content="Kang's Portflolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
