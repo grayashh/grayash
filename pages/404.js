@@ -8,7 +8,7 @@ export default function PageNotFound() {
         <RiAlarmWarningFill
           size={60}
           className="hover:drop-shadow-glow animate-flicker text-red-500"
-        />
+    />
         <h1 className="mt-8 text-4xl md:text-6xl">Page Not Found</h1>
         <Link className="mt-4 md:text-lg" href="/">
           Back to Home
