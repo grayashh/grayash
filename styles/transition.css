@@ -1,0 +1,16 @@
+/* Prevent scrollbar during animation */
+.effect {
+  overflow: hidden;
+}
+
+.page {
+  background: white;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
