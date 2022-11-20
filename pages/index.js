@@ -1,7 +1,10 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-const NoSsr = dynamic(() => import("@splinetool/react-spline"), {});
+const NoSsr = dynamic(() => import("@splinetool/react-spline"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 export default function Home() {
   return (
