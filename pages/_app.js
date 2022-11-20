@@ -3,8 +3,9 @@ import "../styles/transition.css";
 import Transition from "../components/Transition";
 import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
+import dynamic from "next/dynamic";
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class">
       <Layout>
@@ -14,6 +15,8 @@ function MyApp({ Component, pageProps }) {
       </Layout>
     </ThemeProvider>
   );
-}
+};
 
-export default MyApp;
+export default dynamic(() => Promise.resolve(App), {
+  ssr: false,
+});
