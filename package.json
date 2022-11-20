@@ -12,8 +12,13 @@
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@react-three/drei": "^9.41.0",
+    "@react-three/fiber": "^8.9.1",
+    "@splinetool/loader": "^0.9.143",
+    "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.3",
     "@splinetool/runtime": "^0.9.143",
+    "@types/three": "^0.146.0",
     "dotenv": "^16.0.2",
     "framer-motion": "^7.6.7",
     "next": "12.2.5",
@@ -21,7 +26,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "react-lottie-player": "^1.4.3"
+    "react-lottie-player": "^1.4.3",
+    "three": "^0.146.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
