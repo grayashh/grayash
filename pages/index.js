@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-import Layout from "../components/layout";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Grayash`s Portfolio</title>
         <meta name="description" content="Kang's Portflolio" />
@@ -15,6 +14,6 @@ export default function Home() {
           <Hero />
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
