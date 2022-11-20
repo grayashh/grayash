@@ -32,7 +32,7 @@ export default function ProjectItem({ data }) {
   };
 
   return (
-    <div className="project-card"> 
+    <div className="project-card">
       <Image
         className="rounded-t-xl"
         src={imgSrc}

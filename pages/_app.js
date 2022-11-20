@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Transition from "../components/Transition";
 import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
+import Background from "../components/background";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -12,6 +12,8 @@
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@splinetool/react-spline": "^2.2.3",
+    "@splinetool/runtime": "^0.9.143",
     "dotenv": "^16.0.2",
     "framer-motion": "^7.6.7",
     "next": "12.2.5",
