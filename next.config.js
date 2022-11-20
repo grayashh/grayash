@@ -5,7 +5,6 @@ const nextConfig = {
   images: {
     domains: ["www.notion.so", "images.unsplash.com"],
   },
-  assetPrefix: ".",
 };
 
 module.exports = nextConfig;
