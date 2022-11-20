@@ -26,7 +26,7 @@ const Transition = ({ children }) => {
 
   return (
     <div className="effect">
-      <AnimatePresence initial={false} exitBeforeEnter>
+      <AnimatePresence initial={false} exitBeforeEnter mode="wait">
         <motion.div
           key={asPath}
           variants={variants}
