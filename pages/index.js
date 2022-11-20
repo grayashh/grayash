@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Background from "../components/background";
 import Hero from "../components/Home/hero";
 
 export default function Home() {
   return (
     <>
-      <Background />
       <Head>
         <title>Grayash`s Portfolio</title>
         <meta name="description" content="Kang's Portflolio" />
