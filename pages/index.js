@@ -1,6 +1,10 @@
-import Spline from "@splinetool/react-spline";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
+
+const Back = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -11,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
-        <Spline scene="https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode" />
+        <Back scene="https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode" />
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>
