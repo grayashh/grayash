@@ -1,7 +1,6 @@
-import Spline from "@splinetool/react-spline";
+import Spline from "";
 
 export default function Background() {
   return (
-    <Spline scene="https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode" />
   );
 }
