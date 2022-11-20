@@ -4,13 +4,11 @@ import { Suspense, useEffect } from "react";
 import Hero from "../components/Home/hero";
 
 export default function Home() {
-  useEffect(() => {
-    const Background = dynamic(() => import("../components/background"), {
-      loading: () => <p>Loading...</p>,
-      ssr: false,
-      suspense: true,
-    });
-  }, []);
+  const Background = dynamic(() => import("../components/background"), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+    suspense: true,
+  });
   return (
     <>
       <Head>
