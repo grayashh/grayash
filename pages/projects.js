@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Background from "../components/background";
 import ProjectItem from "../components/projects/project-item";
 import { TOKEN, DATABASE_ID } from "../config/index";
 
