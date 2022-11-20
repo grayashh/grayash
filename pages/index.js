@@ -1,11 +1,7 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
+import Hero from "../components/Home/hero";
 
 export default function Home() {
-  const NoSsr = dynamic(() => import("../components/Home/hero"), {
-    ssr: false,
-  });
-
   return (
     <>
       <Head>
@@ -15,7 +11,7 @@ export default function Home() {
       </Head>
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <NoSsr />
+          <Hero />
         </div>
       </section>
     </>
