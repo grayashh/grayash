@@ -1,15 +1,16 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import Hero from "../components/Home/hero";
 
-const Background = dynamic(() => import("../components/background"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-  suspense: true,
-});
-
 export default function Home() {
+  useEffect(() => {
+    const Background = dynamic(() => import("../components/background"), {
+      loading: () => <p>Loading...</p>,
+      ssr: false,
+      suspense: true,
+    });
+  }, []);
   return (
     <>
       <Head>
