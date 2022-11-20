@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import Hero from "../components/Home/hero";
 
 export default function Home() {
