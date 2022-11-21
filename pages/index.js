@@ -1,11 +1,5 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-
-const DynamicBackground = dynamic(() => import("../components/background"), {
-  loading: () => null,
-  ssr: false,
-});
 
 export default function Home() {
   return (
@@ -16,7 +10,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
-        <DynamicBackground />
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>
