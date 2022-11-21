@@ -1,4 +1,7 @@
 {
   "extends": "next/core-web-vitals",
-  "rules": {}
+  "rules": {
+    "react/no-unknown-property": [0],
+    "react/display-name": [0]
+  }
 }
