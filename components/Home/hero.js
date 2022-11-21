@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Animation from "./animation";
 
 const DynamicBackground = dynamic(() => import("../background"), {
+  ssr: false,
   suspense: true,
 });
 
