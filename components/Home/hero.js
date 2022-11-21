@@ -11,7 +11,7 @@ const DynamicBackground = dynamic(() => import("../background"), {
 export default function Hero() {
   return (
     <>
-      <Suspense fallback={`Loading...`}>
+      <Suspense fallback={<DynamicBackground />}>
         <DynamicBackground />
       </Suspense>
       <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center z-2">
