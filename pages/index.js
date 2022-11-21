@@ -1,12 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
 
-const Back = dynamic(() => import("../components/background"), {
-  loading: () => <p>...</p>,
-  ssr: false,
-});
+const Back = dynamic(
+  () => {
+    return import("../components/background");
+  },
+  {
+    loading: () => <p>...</p>,
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
