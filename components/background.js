@@ -3,16 +3,7 @@
 */
 
 import Spline from "@splinetool/react-spline";
-import dynamic from "next/dynamic";
 
 export default function App() {
-  dynamic(() => import("@splinetool/react-spline"), {
-    ssr: false,
-  });
-
-  if (window !== undefined) {
-    return (
-      <Spline scene="https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode" />
-    );
-  }
+  return <Spline scene="/3d.splinecode" />;
 }
