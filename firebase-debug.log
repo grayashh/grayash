@@ -329,3 +329,30 @@
 [debug] [2022-11-22T10:27:19.537Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-e3641:testIamPermissions 200
 [debug] [2022-11-22T10:27:19.537Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-e3641:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
 [debug] [2022-11-22T10:27:19.537Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e3641 [none]
+[debug] [2022-11-22T10:27:20.580Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e3641 200
+[debug] [2022-11-22T10:27:20.580Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e3641 {"projectId":"portfolio-e3641","projectNumber":"131602198232","displayName":"Portfolio","name":"projects/portfolio-e3641","resources":{"hostingSite":"portfolio-e3641"},"state":"ACTIVE","etag":"1_4bb77424-e502-46a3-9688-07c58dd67d48"}
+[debug] [2022-11-22T10:27:21.878Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfolio-e3641/sites pageToken=&pageSize=10
+[debug] [2022-11-22T10:27:23.205Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfolio-e3641/sites 200
+[debug] [2022-11-22T10:27:23.205Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/portfolio-e3641/sites {"sites":[{"name":"projects/portfolio-e3641/sites/portfolio-e3641","defaultUrl":"https://portfolio-e3641.web.app","appId":"1:131602198232:web:9b6dd5b03fa5c9589531ad","type":"DEFAULT_SITE"}]}
+[debug] [2022-11-22T10:27:23.206Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:131602198232:web:9b6dd5b03fa5c9589531ad/config [none]
+[debug] [2022-11-22T10:27:24.779Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:131602198232:web:9b6dd5b03fa5c9589531ad/config 200
+[debug] [2022-11-22T10:27:24.779Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:131602198232:web:9b6dd5b03fa5c9589531ad/config {"projectId":"portfolio-e3641","appId":"1:131602198232:web:9b6dd5b03fa5c9589531ad","storageBucket":"portfolio-e3641.appspot.com","apiKey":"AIzaSyDY1jrJFJe3Tc8467-yHTnIzABWgTcsXkU","authDomain":"portfolio-e3641.firebaseapp.com","messagingSenderId":"131602198232","measurementId":"G-C23K04SZ6W"}
+[debug] [2022-11-22T10:27:34.638Z] Error: Failed to collect page data for /
+    at /Users/0o0/nextjs-study/next-portfolio/node_modules/next/dist/build/utils.js:743:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-11-22T10:29:46.985Z] ----------------------------------------------------------------------
+[debug] [2022-11-22T10:29:46.986Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2022-11-22T10:29:46.986Z] CLI Version:   11.16.1
+[debug] [2022-11-22T10:29:46.986Z] Platform:      darwin
+[debug] [2022-11-22T10:29:46.986Z] Node Version:  v16.15.1
+[debug] [2022-11-22T10:29:46.989Z] Time:          Tue Nov 22 2022 19:29:46 GMT+0900 (대한민국 표준시)
+[debug] [2022-11-22T10:29:46.989Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-22T10:29:47.045Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-22T10:29:47.045Z] > authorizing via signed-in user (by.tg8707@gmail.com)
+[debug] [2022-11-22T10:29:47.046Z] [iam] checking project portfolio-e3641 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-22T10:29:47.047Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-e3641:testIamPermissions [none]
+[debug] [2022-11-22T10:29:47.047Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-e3641:testIamPermissions x-goog-quota-user=projects/portfolio-e3641
+[debug] [2022-11-22T10:29:47.048Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-e3641:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
