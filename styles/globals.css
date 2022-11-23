@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-canvas {
-  @apply fixed w-full h-full z-10 bg-white dark:bg-slate-800;
+* {
+  @apply z-10;
 }
 
 .bg-primary {
