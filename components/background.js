@@ -1,6 +1,7 @@
 export default function Back() {
   return (
     <iframe
+      className="bg-primary"
       src="https://my.spline.design/glasscirclescopy-7b4f2dd37b1b740eaf2eed2e501e2386/"
       style={{
         position: "fixed",
