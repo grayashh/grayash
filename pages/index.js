@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import Back from "../components/background";
@@ -11,8 +11,8 @@ export default function Home() {
         <meta name="description" content="Kang's Portflolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Back />
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
-        <Back />
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>

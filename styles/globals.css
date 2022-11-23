@@ -3,14 +3,11 @@
 @tailwind utilities;
 
 * {
-  z-index: 10;
+  @apply z-20;
 }
 
 canvas {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
+  @apply fixed w-full h-full z-10;
 }
 
 .bg-primary {

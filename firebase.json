@@ -1,7 +1,0 @@
-{
-  "hosting": {
-    "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "site": "portfolio-e3641"
-  }
-}
