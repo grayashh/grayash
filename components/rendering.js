@@ -5,10 +5,11 @@
 import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 
-export default function Rendering({ ...props }) {
+const Rendering = ({ ...props }) => {
   const { nodes, materials } = useSpline("3d.spline");
   return (
     <>
+      <color attach="background" args={["#604484"]} />
       <group {...props} dispose={null}>
         <mesh
           name="Text 5"
@@ -143,4 +144,5 @@ export default function Rendering({ ...props }) {
       </group>
     </>
   );
-}
+};
+export default Rendering;
