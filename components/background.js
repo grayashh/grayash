@@ -10,6 +10,7 @@ import {
   OrthographicCamera,
   PerspectiveCamera,
 } from "@react-three/drei";
+import dynamic from "next/dynamic";
 
 function Back({ ...props }) {
   const { nodes, materials } = useSpline("3d.spline");
@@ -152,6 +153,10 @@ function Back({ ...props }) {
 }
 
 export default function background() {
+  dynamic(() => Promise.resolve(Back), {
+    ssr: false,
+  });
+
   return (
     <Suspense fallback={null}>
       <Canvas
