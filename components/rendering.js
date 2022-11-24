@@ -9,7 +9,6 @@ const Rendering = ({ ...props }) => {
   const { nodes, materials } = useSpline("3d.spline");
   return (
     <>
-      <color attach="background" args={["#604484"]} />
       <group {...props} dispose={null}>
         <mesh
           name="Text 5"
