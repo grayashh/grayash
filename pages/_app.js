@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       <Layout>
-        {/* <Transition> */}
-        <Component {...pageProps} />
-        {/* </Transition> */}
+        <Transition>
+          <Component {...pageProps} />
+        </Transition>
       </Layout>
     </ThemeProvider>
   );
