@@ -9,9 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 function Back({ ...props }) {
-  const { nodes, materials } = useSpline(
-    "https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode"
-  );
+  const { nodes, materials } = useSpline("3d.spline");
   return (
     <>
       <group {...props} dispose={null}>

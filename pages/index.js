@@ -1,7 +1,11 @@
 import { React } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-import Back from "../components/background";
+import dynamic from "next/dynamic";
+
+const Back = dynamic(() => import("../components/background"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
