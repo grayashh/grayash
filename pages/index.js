@@ -3,7 +3,7 @@ import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
 
-const Background = dynamic(() => import("../components/background"), {
+const Background = dynamic(() => import("../components/rendering"), {
   ssr: false,
 });
 
