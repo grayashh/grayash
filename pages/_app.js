@@ -7,11 +7,11 @@ import Layout from "../components/layout";
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
-      {/* <Layout> */}
-      <Transition>
-        <Component {...pageProps} />
-      </Transition>
-      {/* </Layout> */}
+      <Layout>
+        <Transition>
+          <Component {...pageProps} />
+        </Transition>
+      </Layout>
     </ThemeProvider>
   );
 }
