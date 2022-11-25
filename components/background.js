@@ -1,18 +1,15 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef } from "react";
+import Rendering from "./rendering";
 
 export default function Background() {
-  const Rendering = dynamic(() => import("../components/rendering"), {
-    ssr: false,
-  });
   const canvasRef = useRef < HTMLCanvasElement > null;
 
   return (
     <Suspense fallback={null}>
       <Canvas
-        itemRef={canvasRef}
+        ref={canvasRef}
         shadows
         flat
         linear
