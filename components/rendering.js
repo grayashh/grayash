@@ -7,6 +7,7 @@ import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
+import dynamic from "next/dynamic";
 
 const Rendering = ({ ...props }) => {
   const { nodes, materials } = useSpline("3d.spline");
@@ -150,6 +151,10 @@ const Rendering = ({ ...props }) => {
 
 export default function Background() {
   const canvasRef = useRef();
+  const Three = dynamic(() => import(Rendering), {
+    ssr: false,
+    loading: () => <p>Loading...</p>,
+  });
 
   return (
     <Suspense fallback={null}>
@@ -163,7 +168,7 @@ export default function Background() {
           zIndex: "0",
         }}
       >
-        <Rendering />
+        <Three />
         <OrbitControls />
       </Canvas>
     </Suspense>
