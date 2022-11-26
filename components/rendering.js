@@ -7,13 +7,14 @@ import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
+import NoSSR from "react-no-ssr";
 
 export default function Background() {
   const canvasRef = useRef();
   const Rendering = ({ ...props }) => {
     const { nodes, materials } = useSpline("scene.splinecode");
     return (
-      <>
+      <NoSSR>
         <group {...props} dispose={null}>
           <mesh
             name="Text 5"
@@ -146,24 +147,26 @@ export default function Background() {
             scale={1}
           />
         </group>
-      </>
+      </NoSSR>
     );
   };
   return (
-    <Suspense fallback={null}>
-      <Canvas
-        ref={canvasRef}
-        shadows
-        flat
-        linear
-        style={{
-          position: "fixed",
-          zIndex: "0",
-        }}
-      >
-        <Rendering />
-        <OrbitControls />
-      </Canvas>
-    </Suspense>
+    <NoSSR>
+      <Suspense fallback={null}>
+        <Canvas
+          ref={canvasRef}
+          shadows
+          flat
+          linear
+          style={{
+            position: "fixed",
+            zIndex: "0",
+          }}
+        >
+          <Rendering />
+          <OrbitControls />
+        </Canvas>
+      </Suspense>
+    </NoSSR>
   );
 }
