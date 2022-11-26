@@ -163,7 +163,7 @@ export default function Background() {
         }}
       >
         <Rendering />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Canvas>
     </Suspense>
   );
