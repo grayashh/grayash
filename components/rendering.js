@@ -6,7 +6,7 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useRef } from "react";
 
 export default function Background() {
   const canvasRef = useRef();
