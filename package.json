@@ -27,6 +27,7 @@
     "react-icons": "^4.4.0",
     "react-loader-spinner": "^5.3.4",
     "react-lottie-player": "^1.4.3",
+    "react-no-ssr": "^1.1.0",
     "three": "^0.146.0"
   },
   "devDependencies": {
