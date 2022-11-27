@@ -164,7 +164,7 @@ export default function Background() {
           zIndex: "0",
         }}
       >
-        {loading ? <Rendering /> : <div> {loading} </div>}
+        {loading ? <Rendering /> : <div> loading... </div>}
         <OrbitControls />
       </Canvas>
     </Suspense>
