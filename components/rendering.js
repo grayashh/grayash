@@ -6,15 +6,15 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { createRef, Suspense, useRef } from "react";
 
 export default function Background() {
-  let canvasRef = useRef(null);
-  useEffect(() => {
-    canvasRef = useRef < HTMLCanvasElement > null;
-  });
+  const canvasRef = createRef(null);
+
   const Rendering = ({ ...props }) => {
     const { nodes, materials } = useSpline("scene.splinecode");
+    canvasRef.current.focus();
+    canvasRef = useRef < HTMLCanvasElement > null;
     return (
       <group {...props} dispose={null}>
         <mesh
