@@ -1,4 +1,8 @@
-import Spline from "@splinetool/react-spline";
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
+
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 export default function Rendering() {
