@@ -6,10 +6,15 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 export default function Background() {
+  const [loading, setLoading] = useState(false);
   let canvasRef = useRef(null);
+  useEffect(() => {
+    canvasRef = useRef < HTMLCanvasElement > null;
+    setLoading(true);
+  });
   const Rendering = ({ ...props }) => {
     const { nodes, materials } = useSpline("scene.splinecode");
     return (
@@ -147,9 +152,6 @@ export default function Background() {
       </group>
     );
   };
-  useEffect(() => {
-    canvasRef = useRef < HTMLCanvasElement > null;
-  });
   return (
     <Suspense fallback={null}>
       <Canvas
@@ -162,8 +164,8 @@ export default function Background() {
           zIndex: "0",
         }}
       >
-        <Rendering />
-        {/* <OrbitControls /> */}
+        {loading ? <Rendering /> : <div> {loading} </div>}
+        <OrbitControls />
       </Canvas>
     </Suspense>
   );
