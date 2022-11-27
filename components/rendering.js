@@ -5,16 +5,16 @@
 import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { createRef, Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Suspense, useEffect, useRef } from "react";
 
 export default function Background() {
-  const canvasRef = createRef(null);
+  const myMesh = useRef();
 
   const Rendering = ({ ...props }) => {
+    console.log(myMesh);
+    useFrame(() => (myMesh.current += 0.01));
     const { nodes, materials } = useSpline("scene.splinecode");
-    canvasRef.current.focus();
-    canvasRef = useRef < HTMLCanvasElement > null;
     return (
       <group {...props} dispose={null}>
         <mesh
@@ -153,7 +153,8 @@ export default function Background() {
   return (
     <Suspense fallback={null}>
       <Canvas
-        ref={canvasRef}
+        id="canvas"
+        ref={myMesh}
         shadows
         flat
         linear

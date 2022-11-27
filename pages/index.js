@@ -7,13 +7,6 @@ const Background = dynamic(() => import("../components/rendering"), {
 });
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    if (window !== "undefined") {
-      setLoading(true);
-    }
-  });
-
   return (
     <>
       <Head>
@@ -25,7 +18,7 @@ export default function Home() {
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>
-        {loading ? <Background /> : <div> loading... </div>}
+        <Background />
       </section>
     </>
   );
