@@ -3,19 +3,27 @@
 */
 
 import useSpline from "@splinetool/r3f-spline";
-import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
-import { OrbitControls } from "@react-three/drei";
+import {
+  OrbitControls,
+  OrthographicCamera,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
-import dynamic from "next/dynamic";
+import { useEffect, useRef } from "react";
 
-function Background() {
-  const myMesh = useRef();
+function App() {
+  const myMesh = useRef(null);
+
+  useEffect(() => {
+    // ref는 항상 존재여부를 검사하고 사용해야 한다
+    myMesh.current && myMesh.current.focus();
+    console.log(myMesh);
+  });
 
   const Rendering = ({ ...props }) => {
-    console.log(myMesh);
-    useFrame(() => (myMesh.current += 0.01));
     const { nodes, materials } = useSpline("scene.splinecode");
+    useFrame(() => (myMesh.current += 0.01));
+
     return (
       <group {...props} dispose={null}>
         <mesh
@@ -152,23 +160,20 @@ function Background() {
     );
   };
   return (
-    <Suspense fallback={null}>
-      <Canvas
-        id="canvas"
-        ref={myMesh}
-        shadows
-        flat
-        linear
-        style={{
-          position: "fixed",
-          zIndex: "0",
-        }}
-      >
-        <Rendering />
-        <OrbitControls />
-      </Canvas>
-    </Suspense>
+    <Canvas
+      ref={myMesh}
+      shadows
+      flat
+      linear
+      style={{
+        position: "fixed",
+        zIndex: "0",
+      }}
+    >
+      <Rendering />
+      <OrbitControls />
+    </Canvas>
   );
 }
 
-export default dynamic(() => Promise.resolve(Background), { ssr: false });
+export default App;
