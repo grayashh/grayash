@@ -1,4 +1,4 @@
-import { React, Suspense, useEffect, useRef, useState } from "react";
+import { React, Suspense, useEffect, useState } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
@@ -8,13 +8,6 @@ const Rendering = dynamic(() => import("../components/rendering"), {
 });
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    if (window !== "undefined") {
-      setLoading(true);
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -26,13 +19,7 @@ export default function Home() {
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>
-        {loading ? (
-          <Suspense fallback={null}>
-            <Rendering />
-          </Suspense>
-        ) : (
-          <div> loading... </div>
-        )}
+        <Rendering />
       </section>
     </>
   );

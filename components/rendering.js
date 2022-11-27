@@ -11,7 +11,7 @@ import {
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
-function App() {
+function Background() {
   const myMesh = useRef(null);
 
   useEffect(() => {
@@ -176,4 +176,4 @@ function App() {
   );
 }
 
-export default App;
+export default Background;
