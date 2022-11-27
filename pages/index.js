@@ -1,7 +1,10 @@
 import { React, useEffect, useState } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-import Background from "../components/rendering";
+import dynamic from "next/dynamic";
+const Background = dynamic(() => import("../components/rendering"), {
+  ssr: false,
+});
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
