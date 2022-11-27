@@ -6,9 +6,10 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useRef } from "react";
+import dynamic from "next/dynamic";
 
-export default function Background() {
+function Background() {
   const myMesh = useRef();
 
   const Rendering = ({ ...props }) => {
@@ -169,3 +170,5 @@ export default function Background() {
     </Suspense>
   );
 }
+
+export default dynamic(() => Promise.resolve(Background), { ssr: false });
