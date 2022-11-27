@@ -1,11 +1,7 @@
-import { React, Suspense, useEffect, useState } from "react";
+import { React, Suspense } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-import dynamic from "next/dynamic";
-
-const Rendering = dynamic(() => import("./rendering"), {
-  ssr: false,
-});
+import Rendering from "./rendering";
 
 export default function Home() {
   return (
@@ -19,7 +15,9 @@ export default function Home() {
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
         </div>
-        <Rendering />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Rendering />
+        </Suspense>
       </section>
     </>
   );
