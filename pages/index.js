@@ -2,8 +2,9 @@ import { React, useEffect, useState } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import Background from "../components/rendering";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (window !== "undefined") {
@@ -27,3 +28,5 @@ export default function Home() {
     </>
   );
 }
+
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
