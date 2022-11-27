@@ -9,11 +9,9 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 
 export default function Background() {
-  const [loading, setLoading] = useState(false);
   let canvasRef = useRef(null);
   useEffect(() => {
     canvasRef = useRef < HTMLCanvasElement > null;
-    setLoading(true);
   });
   const Rendering = ({ ...props }) => {
     const { nodes, materials } = useSpline("scene.splinecode");
@@ -164,7 +162,7 @@ export default function Background() {
           zIndex: "0",
         }}
       >
-        {loading ? <Rendering /> : <div> loading... </div>}
+        <Rendering />
         <OrbitControls />
       </Canvas>
     </Suspense>
