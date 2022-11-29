@@ -1,7 +1,11 @@
 import { React, Suspense } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
-import Rendering from "./rendering";
+import dynamic from "next/dynamic";
+
+const Rendering = dynamic(() => import("../components/rendering"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
