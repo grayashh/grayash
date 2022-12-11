@@ -31,7 +31,8 @@
     "react-lottie-player": "^1.4.3",
     "react-merge-refs": "^2.0.1",
     "react-scripts": "^5.0.1",
-    "three": "^0.146.0"
+    "three": "^0.146.0",
+    "three-stdlib": "^2.20.4"
   },
   "devDependencies": {
     "@babel/runtime": "^7.13.8",
