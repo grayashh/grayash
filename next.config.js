@@ -1,6 +1,3 @@
-/** @type {import('next').NextConfig} */
-module.exports = nextConfig;
-
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -16,9 +13,7 @@ const nextConfig = {
   //   styledComponents: true,
   // },
   experimental: {},
-  images: {
-    domains: ["www.notion.so", "images.unsplash.com"],
-  },
+  images: {},
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   webpack(config, { isServer }) {
     // audio support
