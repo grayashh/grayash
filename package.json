@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "EXPORT=true next build && EXPORT=true next export",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@next/bundle-analyzer": "^13.0.6",
     "@react-three/drei": "^9.41.0",
     "@react-three/fiber": "^8.9.1",
     "@splinetool/loader": "^0.9.143",
@@ -32,7 +35,8 @@
     "react-merge-refs": "^2.0.1",
     "react-scripts": "^5.0.1",
     "three": "^0.146.0",
-    "three-stdlib": "^2.20.4"
+    "three-stdlib": "^2.20.4",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@babel/runtime": "^7.13.8",
