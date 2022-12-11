@@ -13,7 +13,10 @@ const nextConfig = {
   //   styledComponents: true,
   // },
   experimental: {},
-  images: {},
+  reactStrictMode: false,
+  images: {
+    domains: ["www.notion.so", "images.unsplash.com"],
+  },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   webpack(config, { isServer }) {
     // audio support

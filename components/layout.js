@@ -6,10 +6,7 @@ import { forwardRef, useRef } from "react";
 const Layout = forwardRef(({ children, ...props }, ref) => {
   const localRef = useRef();
   return (
-    <div
-      ref={mergeRefs([ref, localRef])}
-      className="bg-primary overflow-hidden dom"
-    >
+    <div ref={mergeRefs([ref, localRef])} className="bg-primary">
       <Header />
       <div>{children}</div>
       <Footer />
