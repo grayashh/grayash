@@ -1,12 +1,19 @@
 import Header from "./header";
 import Footer from "./footer";
+import { mergeRefs } from "react-merge-refs";
+import { forwardRef, useRef } from "react";
 
-export default function Layout({ children }) {
+const Layout = forwardRef(({ children, ...props }, ref) => {
+  const localRef = useRef();
   return (
-    <div className="bg-primary">
+    <div
+      ref={mergeRefs([ref, localRef])}
+      className="bg-primary overflow-hidden dom"
+    >
       <Header />
       <div>{children}</div>
       <Footer />
     </div>
   );
-}
+});
+export default Layout;
