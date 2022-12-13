@@ -2,9 +2,7 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 
 export default function Scene({ ...props }) {
-  const { nodes, materials } = useSpline(
-    "https://prod.spline.design/3ioTEE5tnYDlyNJV/scene.splinecode"
-  );
+  const { nodes, materials } = useSpline("scene.splinecode");
   return (
     <group {...props} dispose={null}>
       <mesh
