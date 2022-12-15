@@ -25,12 +25,17 @@ export default function Logo({ route, ...props }) {
   return (
     <group ref={mesh} {...props}>
       {/* @ts-ignore */}
-      <Line worldUnits points={points} color="#1fb2f5" lineWidth={0.15} />
+      <Line
+        worldUnits
+        points={points}
+        color="rgb(99, 102, 241)"
+        lineWidth={0.15}
+      />
       {/* @ts-ignore */}
       <Line
         worldUnits
         points={points}
-        color="#1fb2f5"
+        color="rgb(99, 102, 241)"
         lineWidth={0.15}
         rotation={[0, 0, 1]}
       />
@@ -38,7 +43,7 @@ export default function Logo({ route, ...props }) {
       <Line
         worldUnits
         points={points}
-        color="#1fb2f5"
+        color="rgb(99, 102, 241)"
         lineWidth={0.15}
         rotation={[0, 0, -1]}
       />
@@ -46,7 +51,7 @@ export default function Logo({ route, ...props }) {
         <sphereGeometry args={[0.55, 64, 64]} />
         <meshPhysicalMaterial
           roughness={0}
-          color={hovered ? "hotpink" : "#1fb2f5"}
+          color={hovered ? "rgb(79,70,229)" : "rgb(99, 102, 241)"}
         />
       </mesh>
     </group>
