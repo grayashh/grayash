@@ -2,7 +2,7 @@ import { React } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
-const Rendering = dynamic(() => import("../components/rendering"), {
+const Logo = dynamic(() => import("../components/Logo"), {
   ssr: false,
 });
 
@@ -23,7 +23,7 @@ export default function Home(props) {
   );
 }
 
-Home.canvas = (props) => <Rendering />;
+Home.canvas = (props) => <Logo />;
 
 export async function getStaticProps() {
   return { props: { title: "Index" } };

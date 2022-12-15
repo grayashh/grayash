@@ -16,6 +16,8 @@ export default function Scene({ children, ...props }) {
     >
       {children}
       <Preload all />
+      <directionalLight intensity={0.75} />
+      <ambientLight intensity={0.75} />
       <OrbitControls />
     </Canvas>
   );
