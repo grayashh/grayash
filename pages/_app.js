@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import "../styles/transition.css";
+import "../styles/index.css";
 import Transition from "../components/Transition";
 import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
 import { useRef } from "react";
-import Scene from "components/scene";
+import dynamic from "next/dynamic";
+const Scene = dynamic(() => import("../components/scene"), { ssr: true });
 
 function MyApp({ Component, pageProps = { title: "index" } }) {
   const ref = useRef();
