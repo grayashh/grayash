@@ -2,7 +2,7 @@ import { React } from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
-const Logo = dynamic(() => import("../components/Logo"), {
+const Logo = dynamic(() => import("../components/logo"), {
   ssr: false,
 });
 
