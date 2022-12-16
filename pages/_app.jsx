@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/transition.css";
-import "../styles/index.css";
 import Transition from "../components/Transition";
 import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
