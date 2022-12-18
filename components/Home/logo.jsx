@@ -2,8 +2,10 @@ import * as THREE from "three";
 import { useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Line, useCursor } from "@react-three/drei";
+import Modal from "./Modal";
 
 export default function Logo({ route, ...props }) {
+  const [open, setOpen] = useState(false);
   const mesh = useRef(null);
   const [hovered, hover] = useState(false);
   const points = useMemo(
@@ -47,7 +49,11 @@ export default function Logo({ route, ...props }) {
         lineWidth={0.15}
         rotation={[0, 0, -1]}
       />
-      <mesh onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
+      <mesh
+        onPointerOver={() => hover(true)}
+        onPointerOut={() => hover(false)}
+        onClick={() => setOpen(true)}
+      >
         <sphereGeometry args={[0.55, 64, 64]} />
         <meshPhysicalMaterial
           roughness={0}
