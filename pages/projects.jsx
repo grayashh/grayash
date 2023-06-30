@@ -3,8 +3,6 @@ import ProjectItem from "../components/projects/project-item";
 import { TOKEN, DATABASE_ID } from "../config/index";
 
 export default function Projects({ projects }) {
-  console.log(projects);
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen mb-10 px-6">
       <Head>
@@ -40,7 +38,7 @@ export async function getStaticProps(context) {
       sorts: [
         {
           property: "WorkPeriod",
-          direction: "ascending",
+          direction: "descending",
         },
       ],
     }),
@@ -56,8 +54,6 @@ export async function getStaticProps(context) {
   const projectNames = projects.results.map(
     (aProject) => aProject.properties.Name.title[0].plain_text
   );
-
-  console.log(`projectNames : ${projectNames}`);
 
   return {
     props: { projects },
