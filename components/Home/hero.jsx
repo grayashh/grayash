@@ -11,8 +11,9 @@ export default function Hero() {
           Develop Portfolio
         </h1>
         <p className="mb-8 leading-relaxed">
-          👨‍🎓 MJU Convergence Software Data Technology (2022.03 ~ ) <br />
-          💻 Beyond Coding(2022.02 ~ )
+          💻 Beyond Coding(2022.02 ~ ) <br />
+          🥷 AUSG 7th(2023.06 ~ ) <br />
+          🧙 DND 9th(2023.06 ~ ) <br />
         </p>
         <div className="flex justify-center">
           <Link href="/projects">
