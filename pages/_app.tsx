@@ -8,6 +8,8 @@ import dynamic from "next/dynamic";
 import { AppProps } from "next/app";
 import { NextComponentType } from "next";
 import Realistic from "../components/confetti";
+import { Analytics } from "@vercel/analytics/react";
+
 const Scene = dynamic(() => import("../components/scene"));
 
 interface MyAppProps extends AppProps {
@@ -56,6 +58,7 @@ function MyApp({ Component, pageProps = { title: "index" } }: MyAppProps) {
           )}
         </Transition>
       </Layout>
+      <Analytics />
     </ThemeProvider>
   );
 }

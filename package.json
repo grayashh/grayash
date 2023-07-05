@@ -21,6 +21,7 @@
     "@splinetool/react-spline": "^2.2.3",
     "@splinetool/runtime": "^0.9.143",
     "@types/three": "^0.146.0",
+    "@vercel/analytics": "^1.0.1",
     "dotenv": "^16.0.2",
     "framer-motion": "^7.6.7",
     "glsl-random": "^0.0.5",
