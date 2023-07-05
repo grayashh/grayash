@@ -5,16 +5,25 @@ import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
-const Scene = dynamic(() => import("../components/scene.tsx"), { ssr: true });
+import { AppProps } from "next/app";
+import { NextComponentType } from "next";
+const Scene = dynamic(() => import("../components/scene"));
 
-function MyApp({ Component, pageProps = { title: "index" } }) {
-  const ref = useRef();
+interface MyAppProps extends AppProps {
+  Component: NextComponentType & {
+    canvas?: (props: any) => JSX.Element;
+  };
+}
+
+function MyApp({ Component, pageProps = { title: "index" } }: MyAppProps) {
+  const ref = useRef<HTMLElement>(null!);
+  // null! 값은 ref 객체가 초기에 null로 설정되지만 런타임에서 항상 값을 가지게 될 것임을 TypeScript에 알리는 non-null assertion operator입니다.
   return (
     <ThemeProvider attribute="class">
       <Layout ref={ref}>
         <Transition>
           <Component {...pageProps} />
-          {Component?.canvas && (
+          {Component.canvas && (
             <Scene
               className="pointer-events-none"
               eventSource={ref}
