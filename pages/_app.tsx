@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 import Layout from "../components/layout";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
-const Scene = dynamic(() => import("../components/scene.jsx"), { ssr: true });
+const Scene = dynamic(() => import("../components/scene.tsx"), { ssr: true });
 
 function MyApp({ Component, pageProps = { title: "index" } }) {
   const ref = useRef();
