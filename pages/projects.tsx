@@ -2,7 +2,47 @@ import Head from "next/head";
 import ProjectItem from "../components/projects/project-item";
 import { TOKEN, DATABASE_ID } from "../config/index";
 
-export default function Projects({ projects }) {
+export interface ProjectProps {
+  projects: {
+    results: {
+      id: string;
+      properties: {
+        Name: {
+          title: {
+            plain_text: string;
+          }[];
+        };
+        Github: {
+          url: string;
+        };
+        Description: {
+          rich_text: {
+            plain_text: string;
+          }[];
+        };
+        Tags: {
+          multi_select: {
+            id: string;
+            name: string;
+          }[];
+        };
+        WorkPeriod: {
+          date: {
+            start: string;
+            end: string;
+          };
+        };
+      };
+      cover: {
+        external: {
+          url: string;
+        };
+      };
+    }[];
+  };
+}
+
+export default function Projects({ projects }: ProjectProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen mb-10 px-6">
       <Head>
@@ -24,7 +64,7 @@ export default function Projects({ projects }) {
 }
 
 // 빌드 타임에 호출
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const options = {
     method: "POST",
     headers: {
@@ -50,10 +90,6 @@ export async function getStaticProps(context) {
   );
 
   const projects = await res.json();
-
-  const projectNames = projects.results.map(
-    (aProject) => aProject.properties.Name.title[0].plain_text
-  );
 
   return {
     props: { projects },
