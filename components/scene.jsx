@@ -7,9 +7,7 @@ export default function Scene({ children, ...props }) {
     <Canvas
       {...props}
       style={{
-        position: "absolute",
-        width: "100vw",
-        height: "100vh",
+        position: "fixed",
         top: 0,
         zIndex: 0,
       }}
@@ -18,7 +16,7 @@ export default function Scene({ children, ...props }) {
       <Preload all />
       <directionalLight intensity={0.75} />
       <ambientLight intensity={0.75} />
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 }
