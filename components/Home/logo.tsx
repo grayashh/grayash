@@ -1,9 +1,12 @@
 import * as THREE from "three";
-import { MutableRefObject, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Line, useCursor } from "@react-three/drei";
+import { useCounterContext } from "../../pages/_app";
 
 export default function Logo({ ...props }) {
+  const { count, setCount } = useCounterContext();
+
   const mesh = useRef<THREE.Group>(null!);
   const [hovered, hover] = useState(false);
   const points = useMemo(
@@ -51,7 +54,9 @@ export default function Logo({ ...props }) {
       <mesh
         onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
-        onClick={() => {}}
+        onClick={() => {
+          setCount(count + 1);
+        }}
       >
         <sphereGeometry args={[0.55, 64, 64]} />
         <meshPhysicalMaterial
