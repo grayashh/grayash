@@ -1,7 +1,42 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 
-export default function ProjectItem({ data }) {
+interface ProjectData {
+  properties: {
+    Name: {
+      title: {
+        plain_text: string;
+      }[];
+    };
+    Github: {
+      url: string;
+    };
+    Description: {
+      rich_text: {
+        plain_text: string;
+      }[];
+    };
+    Tags: {
+      multi_select: {
+        id: string;
+        name: string;
+      }[];
+    };
+    WorkPeriod: {
+      date: {
+        start: string;
+        end: string;
+      };
+    };
+  };
+  cover: {
+    external: {
+      url: string;
+    };
+  };
+}
+
+export default function ProjectItem({ data }: { data: ProjectData }) {
   const title = data.properties.Name.title[0].plain_text;
   const githubLink = data.properties.Github.url;
   const description = data.properties.Description.rich_text[0].plain_text;
@@ -10,22 +45,22 @@ export default function ProjectItem({ data }) {
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
 
-  const calculatedPeriod = (start, end) => {
+  const calculatedPeriod = (start: string, end: string) => {
     const startDateStringArray = start.split("-");
     const endDateStringArray = end.split("-");
 
     var startDate = new Date(
-      startDateStringArray[0],
-      startDateStringArray[1],
-      startDateStringArray[2]
+      parseInt(startDateStringArray[0]),
+      parseInt(startDateStringArray[1]) - 1,
+      parseInt(startDateStringArray[2])
     );
     var endDate = new Date(
-      endDateStringArray[0],
-      endDateStringArray[1],
-      endDateStringArray[2]
+      parseInt(endDateStringArray[0]),
+      parseInt(endDateStringArray[1]) - 1,
+      parseInt(endDateStringArray[2])
     );
 
-    const diffInMs = Math.abs(endDate - startDate);
+    const diffInMs = Math.abs(endDate.getTime() - startDate.getTime());
     const result = diffInMs / (1000 * 60 * 60 * 24);
 
     return result;
