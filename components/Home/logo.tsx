@@ -1,16 +1,17 @@
 import * as THREE from "three";
-import { useMemo, useRef, useState } from "react";
+import { MutableRefObject, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Line, useCursor } from "@react-three/drei";
 
-export default function Logo({ route, ...props }) {
-  const mesh = useRef(null);
+export default function Logo({ ...props }) {
+  const mesh = useRef<THREE.Group>(null!);
   const [hovered, hover] = useState(false);
   const points = useMemo(
     () =>
       new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(
         100
       ),
+
     []
   );
 
@@ -50,7 +51,7 @@ export default function Logo({ route, ...props }) {
       <mesh
         onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
-        onClick={() => (mesh.current.rotation.y = 0)}
+        onClick={() => {}}
       >
         <sphereGeometry args={[0.55, 64, 64]} />
         <meshPhysicalMaterial
