@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 import Head from "next/head";
 import Hero from "../components/Home/hero";
 import dynamic from "next/dynamic";
@@ -6,7 +6,7 @@ const Logo = dynamic(() => import("../components/Home/logo"), {
   ssr: false,
 });
 
-export default function Home(props) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function Home(props) {
   );
 }
 
-Home.canvas = (props) => <Logo />;
+Home.canvas = () => <Logo />;
 
 export async function getStaticProps() {
   return { props: { title: "Index" } };
