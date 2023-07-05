@@ -1,11 +1,23 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
+import { MutableRefObject } from "react";
 
-export default function Scene({ children, ...props }) {
-  // Everything defined in here will persist between route changes, only children are swapped
+export default function Scene({
+  children,
+  className,
+  eventSource,
+  eventPrefix,
+}: {
+  children: React.ReactNode;
+  className: string;
+  eventSource: MutableRefObject<HTMLElement>;
+  eventPrefix: "offset" | "client" | "page" | "layer" | "screen" | undefined;
+}) {
   return (
     <Canvas
-      {...props}
+      className={className}
+      eventSource={eventSource}
+      eventPrefix={eventPrefix}
       style={{
         position: "fixed",
         top: 0,
