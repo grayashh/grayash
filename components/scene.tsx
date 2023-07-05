@@ -4,18 +4,15 @@ import { MutableRefObject } from "react";
 
 export default function Scene({
   children,
-  className,
   eventSource,
   eventPrefix,
 }: {
   children: React.ReactNode;
-  className: string;
   eventSource: MutableRefObject<HTMLElement>;
   eventPrefix: "offset" | "client" | "page" | "layer" | "screen" | undefined;
 }) {
   return (
     <Canvas
-      className={className}
       eventSource={eventSource}
       eventPrefix={eventPrefix}
       style={{

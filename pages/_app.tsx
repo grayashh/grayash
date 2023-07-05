@@ -24,11 +24,7 @@ function MyApp({ Component, pageProps = { title: "index" } }: MyAppProps) {
         <Transition>
           <Component {...pageProps} />
           {Component.canvas && (
-            <Scene
-              className="pointer-events-none"
-              eventSource={ref}
-              eventPrefix="client"
-            >
+            <Scene eventSource={ref} eventPrefix="client">
               {Component.canvas(pageProps)}
             </Scene>
           )}
