@@ -1,8 +1,8 @@
 import { useCounterContext } from "../pages/_app";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { CSSProperties, useCallback, useEffect, useRef } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
 
-const canvasStyles = {
+const canvasStyles: CSSProperties = {
   position: "fixed",
   pointerEvents: "none",
   width: "100%",
@@ -20,7 +20,7 @@ export default function Realistic() {
 
   const refAnimationInstance = useRef<((opts: any) => void) | null>(null);
 
-  const getInstance = useCallback((instance: null) => {
+  const getInstance = useCallback((instance: ((opts: any) => void) | null) => {
     refAnimationInstance.current = instance;
   }, []);
 
