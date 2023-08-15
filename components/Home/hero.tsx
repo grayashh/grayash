@@ -1,5 +1,6 @@
-import Link from "next/link";
-import Animation from "./animation";
+import Link from 'next/link';
+import Animation from './animation';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -11,9 +12,10 @@ export default function Hero() {
           Develop Portfolio
         </h1>
         <p className="mb-8 leading-relaxed">
-          💻 Beyond Coding(2022.02 ~ ) <br />
-          🥷 AUSG 7th(2023.06 ~ ) <br />
-          🧙 DND 9th(2023.06 ~ ) <br />
+          <Image src="/images/ausg.png" alt="" width="15px" height="15px" /> AUSG 7th
+          <br />
+          <Image src="/images/dnd.ico" alt="" width="15px" height="15px" /> DND 9th
+          <br />
         </p>
         <div className="flex justify-center">
           <Link href="/projects">
