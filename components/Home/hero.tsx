@@ -12,14 +12,30 @@ export default function Hero() {
           Develop Portfolio
         </h1>
         <p className="mb-8 leading-relaxed">
-          <Image src="/images/ausg.png" alt="" width="15px" height="15px" /> AUSG 7th
+          <Image src="/images/favicon_umoh.ico" alt="" width="15px" height="15px" />{' '}
+          <Link href="https://join.umoh.io" target="_blank">
+            <span className="underline text-purple-500 cursor-pointer">UMOH</span>
+          </Link>{' '}
+          Frontend Developer at{' '}
+          <Link href="https://umoh.io/@splab" target="_blank">
+            <span className="underline cursor-pointer">Splab</span>
+          </Link>{' '}
           <br />
-          <Image src="/images/dnd.ico" alt="" width="15px" height="15px" /> DND 9th
+          <Image src="/images/ausg.png" alt="" width="15px" height="15px" />{' '}
+          <Link href="https://ausg.me" target="_blank">
+            <span className="underline cursor-pointer">AUSG</span>
+          </Link>{' '}
+          7th <br />
+          <Image src="/images/dnd.ico" alt="" width="15px" height="15px" />{' '}
+          <Link href="https://www.dnd.ac" target="_blank">
+            <span className="underline cursor-pointer">DND</span>
+          </Link>{' '}
+          9th <br />
           <br />
         </p>
         <div className="flex justify-center">
-          <Link href="/projects">
-            <a className="btn-project">프로젝트 보러가기</a>
+          <Link href="https://dolomite-orange-9bc.notion.site/38b138110e534299990950c4d72981b7?pvs=4" target="_blank">
+            <a className="btn-project">Resume</a>
           </Link>
         </div>
       </div>
