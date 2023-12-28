@@ -1,1 +1,1 @@
-# [Grayash.tech](grayash.tech)
+# [Grayash.tech](https://grayash.tech)
