@@ -34,7 +34,7 @@ export default function Hero() {
           <br />
         </p>
         <div className="flex justify-center">
-          <Link href="https://dolomite-orange-9bc.notion.site/38b138110e534299990950c4d72981b7?pvs=4" target="_blank">
+          <Link href="https://grayashh.notion.site/38b138110e534299990950c4d72981b7?pvs=4" target="_blank">
             <a className="btn-project">Resume</a>
           </Link>
         </div>
