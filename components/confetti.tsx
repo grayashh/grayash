@@ -16,6 +16,7 @@ export default function Realistic() {
 
   useEffect(() => {
     if (count > 0) fire();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   const refAnimationInstance = useRef<((opts: any) => void) | null>(null);
